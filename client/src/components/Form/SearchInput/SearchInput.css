@@ -1,0 +1,22 @@
+.my-input-class{
+  /* background-color: white; */
+  width: 440px;
+}
+
+.my-search-button{
+    border: none !important;
+    background-color: white;
+    color: #2874f0;
+    border-radius: 3px;
+}
+
+.my-input-text{
+  font-size: 14px;
+  border-radius: 3px;
+}
+.my-search-button:hover{
+   border: none !important;
+    background-color: white;
+    color: #2874f0;
+    opacity: 0.7;
+}

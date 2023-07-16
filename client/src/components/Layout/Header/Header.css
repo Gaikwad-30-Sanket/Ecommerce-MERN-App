@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Open+Sans:wght@500&display=swap');
+/* imported fonts */
+/* font-family: 'Inter', sans-serif;
+font-family: 'Open Sans', sans-serif; */
+.navbar {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 20px;
+    font-size: 16px;
+    letter-spacing: .1px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #2874f0;
+   }  
+  
+   .my-nav-item{
+    color: white;
+   }
+/*     
+   .my-nav-container{
+    max-width: 1010px;
+   } */
+
+  .search-form {
+    margin-right: 10px;
+    margin-top: 4px;
+  } */
+  /* .search-form input {
+    border: none;
+    border-radius: 0;
+  }
+  .search-form button {
+    background-color: #000000;
+    border-radius: 0;
+    color: white;
+  } */
+  
+  .navbar-brand {
+    font-size: 16px;
+    font-weight: bolder;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 2px;
+    color: #fff !important;
+  }
+
+  .nav-link {
+    font-weight: 500 !important;   /* we are writing important, so that it will overide the existing class */
+    color: #fff !important;
+    margin-top: .22vw;
+  } 
+
+   /* .active { 
+    color: white; 
+  }  */
