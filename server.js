@@ -6,7 +6,8 @@ import authRoutes from "./routes/authRoute.js";
 import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import cors from "cors";
-
+import path from 'path'
+import { fileURLToPath } from "url";
 //configure env
 dotenv.config();
 
@@ -14,6 +15,8 @@ dotenv.config();
 //creating the rest object for to create the API's
 const app = express();
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 // //middelwares
 app.use(cors()); // this is used when there is connection problems when we connect frontend with backend
 app.use(express.json());
@@ -23,11 +26,12 @@ app.use(morgan('dev'));
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
-
+app.use(express.static(path.join(__dirname, './client/build')))
 //rest api
-app.get("/", (req, res) => { // this method contains two parameters to handle the API's
-  res.send("<h1>Welcome to Gaikwad Enterprises</h1>");
-});
+app.use('*', function(req, resp)
+{
+  resp.sendFile(path.join(__dirname,'./client/build/index.html')); 
+})
 
 //PORT
 const PORT = process.env.PORT || 8080; // 8080 is optional if PORT is not accecible from .env
