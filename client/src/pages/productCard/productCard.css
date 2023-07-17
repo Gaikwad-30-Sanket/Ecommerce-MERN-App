@@ -106,3 +106,26 @@
 .liked{
     color: red;
 }
+
+@media (max-width: 576px) {
+    .all-product-container {
+        grid-template-columns: 1fr;
+    }
+
+    .my-category-img {
+        min-height: 120px;
+        max-height: 120px;
+    }
+
+    .my-product-name {
+        font-size: 13px;
+    }
+
+    .my-product-price {
+        font-size: 15px;
+    }
+
+    .my-product-desc {
+        font-size: 10px;
+    }
+}
