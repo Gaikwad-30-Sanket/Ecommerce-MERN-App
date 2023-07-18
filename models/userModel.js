@@ -37,4 +37,4 @@ const userSchema = new mongoose.Schema(
 );
 
 export default mongoose.model("users", userSchema);
-// users is our collection name in ecommers database and userSchema is the above schema
+// users is our collection name in ecommerse database and userSchema is the above schema

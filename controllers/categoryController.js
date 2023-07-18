@@ -1,5 +1,6 @@
 import categoryModel from "../models/categoryModel.js";
-import slugify from "slugify";
+import slugify from "slugify"; //A slug is a URL-friendly representation of a string
+
 export const createCategoryController = async (req, res) => {
   try {
     const { name } = req.body;
