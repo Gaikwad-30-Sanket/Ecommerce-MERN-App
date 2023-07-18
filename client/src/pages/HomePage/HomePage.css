@@ -100,32 +100,3 @@
     cursor: pointer;
     color: #888;
 }
-
-@media (max-width: 576px) {
-    .all-product-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        padding: 5px;
-    }
-
-    .my-products-container {
-        min-height: 150px;
-        width: 100%;
-    }
-
-    .my-category-img {
-        min-height: 150px;
-    }
-
-    .my-product-name {
-        font-size: 14px;
-    }
-
-    .my-product-price {
-        font-size: 16px;
-    }
-
-    .my-product-desc {
-        font-size: 11px;
-    }
-}
