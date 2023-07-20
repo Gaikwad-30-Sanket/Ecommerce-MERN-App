@@ -19,9 +19,9 @@ router.post("/forgot-password", forgotPasswordController);
 
 router.get("/test", requireSignIn, isAdmin, testController); // we can add as many middleware after the url and before the controller5
 
-//protected User route auth // we are making this only for security purposes
+//protected User route auth // we are making this only for security purposes of dashboard
 router.get("/user-auth", requireSignIn, (req, res) => {
-  res.status(200).send({ ok: true });
+  res.status(200).send({ ok: true }); // if the response is ok then continue
 });
 //protected Admin route auth
 router.get("/admin-auth", requireSignIn, isAdmin, (req, res) => {

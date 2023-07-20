@@ -23,7 +23,7 @@ app.use(express.json()); //parses incoming request bodies with JSON payloads.
 app.use(morgan('dev'));  // allows you to log HTTP requests and their details to the console, helping you with development, debugging
 
 //routes
-app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/auth", authRoutes); // api - version- route
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
 app.use(express.static(path.join(__dirname, './client/build')))
@@ -34,7 +34,7 @@ app.use('*', function(req, resp)
 })
 
 //PORT
-const PORT = process.env.PORT || 8080; // 8080 is optional if PORT is not accecible from .env
+const PORT = process.env.PORT || 8080; // 8080 is optional if PORT is not accesible from .env
 
 
 const connectDB = async () => {

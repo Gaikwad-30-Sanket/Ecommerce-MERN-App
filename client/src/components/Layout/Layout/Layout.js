@@ -14,7 +14,7 @@ const Layout = ({ children, title, description, keywords, author }) => {  //the 
         <title>{title}</title>
       </Helmet>
        <Header /> {/*we called it from Layout folder, at this position it will show Header.js file */}
-         <main style={{ minHeight: "70vh" }}>
+         <main style={{ minHeight: "75vh" }}>
         <Toaster />
 
         {children} {/* we have taken children as a props at this position, page will show children's functionality */}

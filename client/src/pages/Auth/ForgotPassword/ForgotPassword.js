@@ -3,7 +3,8 @@ import Layout from "../../../components/Layout/Layout/Layout";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import "../../../styles/AuthStyles.css";
+// import "../../../styles/AuthStyles.css";
+import "./forgotPassword.scss"
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -35,11 +36,13 @@ const ForgotPassword = () => {
   };
   return (
     <Layout title={"Forgot Password - Gaikwad Enterprises"}>
-      <div className="form-container ">
+    <div className="lf-super-wrapper">
+    <div className="lf-main-wrapper">
+      <div className="lf-inner">
         <form onSubmit={handleSubmit}>
-          <h4 className="title">RESET PASSWORD</h4>
+          <h4 className="lf-title">RESET PASSWORD</h4>
 
-          <div className="mb-3">
+          <div className="lf-wrapper">
             <input
               type="email"
               value={email}
@@ -50,7 +53,7 @@ const ForgotPassword = () => {
               required
             />
           </div>
-          <div className="mb-3">
+          <div className="lf-wrapper">
             <input
               type="text"
               value={answer}
@@ -61,7 +64,7 @@ const ForgotPassword = () => {
               required
             />
           </div>
-          <div className="mb-3">
+          <div className="lf-wrapper">
             <input
               type="password"
               value={newPassword}
@@ -73,10 +76,12 @@ const ForgotPassword = () => {
             />
           </div>
 
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="lf-btns">
             RESET
           </button>
         </form>
+      </div>
+      </div>
       </div>
     </Layout>
   );

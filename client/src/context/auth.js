@@ -10,7 +10,7 @@ const AuthProvider = ({ children }) => { //below we made the global state
   });
 
   //default axios
-  axios.defaults.headers.common["Authorization"] = auth?.token;
+  axios.defaults.headers.common["Authorization"] = auth?.token; // if we have a auth then put the token from auth into Authorization
 
   useEffect(() => {
     const data = localStorage.getItem("auth"); //we are taking the data from the local storage

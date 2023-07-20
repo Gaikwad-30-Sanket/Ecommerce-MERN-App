@@ -1,0 +1,98 @@
+.lf-super-wrapper{
+    display: flex;
+    width: 100%;
+    min-width: 800px;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0 0 0;
+
+    .lf-main-wrapper{
+        background: url("./images/bg-registration-form-2.jpg");
+        min-height: 500px;
+        min-width: 800px;
+
+        .lf-inner{
+            background: url("./images/registration-form-2.jpg");
+            min-height: 500px;
+            min-width: 800px;
+            background-position: center;
+            object-fit: contain;
+            background-repeat: no-repeat;
+            // background-size: contain;
+            
+            form{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                justify-content: center;
+                padding-left: 100px;
+                padding: 50px;
+
+                h4{
+                    padding-left: 100px;
+                    font-size: 24px;
+                    font-weight: 500px;
+                    letter-spacing: 2px;
+                }
+                
+                .lf-wrapper{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 5px;
+                    // align-items: center;
+                    label, input{
+                        max-width: 350px;
+                        outline: none;
+                    }
+
+                    label{
+                        color: #999;
+                        opacity: 0.9;
+                        font-size: 14px;
+                        font-weight: 200;
+                    }
+
+                    input{
+                        padding: 10px 20px;
+                        font-size: 14px;
+                        border-radius: 50px;
+                        border: 0.5px solid #ccc;
+                        margin-left: 2px;
+                        color: #555;
+                    }
+
+                    &label:focus{
+                        outline: none;
+                    }
+                }
+
+
+                .lf-span-wrapper{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    cursor: pointer;
+                    .lf-span{
+                        font-size: 13px;
+
+                    }
+
+                    .lf-btns{
+                        padding: 10px 40px;
+                        border-radius: 50px;
+                        outline: none;
+                        border: none;
+                        color: white;
+                        background-color: red;
+                        display: inline;
+                        width: fit-content;
+                        font-size: 14px;
+                        margin-left: 120px;
+                    }
+                }
+            }
+            
+        }
+    }
+}

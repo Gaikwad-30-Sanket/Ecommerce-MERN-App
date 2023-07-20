@@ -6,7 +6,7 @@ import SearchInput from "../../Form/SearchInput/SearchInput";
 import useCategory from "../../../hooks/useCategory";
 import { useCart } from "../../../context/cart";
 import { Badge } from "antd";
-import {MdShoppingCart} from "react-icons/md"
+import {MdShoppingCart} from "react-icons/md" //first two characters are name of library after slash you need to add that
 import "./Header.css"
 const Header = () => {
   const [auth, setAuth] = useAuth(); // globally created use state

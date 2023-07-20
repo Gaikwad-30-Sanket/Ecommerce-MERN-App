@@ -13,9 +13,6 @@ import "../../styles/CartStyles.css";
 const CartPage = () => {
   const [auth, setAuth] = useAuth();
   const [cart, setCart] = useCart();
-  // const [clientToken, setClientToken] = useState("");
-  // const [instance, setInstance] = useState("");
-  // const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   //total price
@@ -46,38 +43,6 @@ const CartPage = () => {
     }
   };
 
-  //get payment gateway token
-  // const getToken = async () => {
-  //   try {
-  //     const { data } = await axios.get("/api/v1/product/braintree/token");
-  //     setClientToken(data?.clientToken);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-  // useEffect(() => {
-  //   getToken();
-  // }, [auth?.token]);
-
-  // //handle payments
-  // const handlePayment = async () => {
-  //   try {
-  //     setLoading(true);
-  //     const { nonce } = await instance.requestPaymentMethod();
-  //     const { data } = await axios.post("/api/v1/product/braintree/payment", {
-  //       nonce,
-  //       cart,
-  //     });
-  //     setLoading(false);
-  //     localStorage.removeItem("cart");
-  //     setCart([]);
-  //     navigate("/dashboard/user/orders");
-  //     toast.success("Payment Completed Successfully ");
-  //   } catch (error) {
-  //     console.log(error);
-  //     setLoading(false);
-  //   }
-  // };
   return (
     <Layout title={"Cart"}>
       <div className=" cart-page">

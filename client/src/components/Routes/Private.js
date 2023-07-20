@@ -3,11 +3,10 @@ import { useAuth } from "../../context/auth";
 import { Outlet } from "react-router-dom";
 import axios from "axios";
 import Spinner from "../Spinner/Spinner";
-// import 
 
 
 
-export default function PrivateRoute() {
+export default function PrivateRoute() { // if this private route is executed then only other functionality will, we are doing this for security purposes of dashboard
   const [ok, setOk] = useState(false);
   const [auth, setAuth] = useAuth();
 
@@ -23,5 +22,6 @@ export default function PrivateRoute() {
     if (auth?.token) authCheck();
   }, [auth?.token]);
 
-  return ok ? <Outlet /> : <Spinner />;
+  return ok ? <Outlet /> : <Spinner />; // if the result is ok then outlet will be sent otherwise spinner will be showed
+  // if we sent outlet then only nested routing will be performed
 }

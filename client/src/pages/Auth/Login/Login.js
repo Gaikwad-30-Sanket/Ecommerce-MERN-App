@@ -3,12 +3,13 @@ import Layout from "../../../components/Layout/Layout/Layout";
 import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import toast from "react-hot-toast";
-import "../../../styles/AuthStyles.css";
+// import "../../../styles/AuthStyles.css";
+import "./login.scss";
 import { useAuth } from "../../../context/auth"; //this is custom hook globally decleared with the help of contextAPI
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [auth, setAuth] = useAuth(); // this is globally decleared use state
+  const [auth, setAuth] = useAuth(); // this is globally decleared use state using context API
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -24,8 +25,8 @@ const Login = () => {
       if (res && res.data.success) {
         toast.success(res.data && res.data.message);
         setAuth({
-          ...auth, // we are keeping the previous values as it is
-          user: res.data.user,
+          ...auth, // we are keeping the previous values as it is and passing new user and token in global state
+          user: res.data.user, // user and token is declared inside useAuth() global state and we are also getting from backend as a response
           token: res.data.token,
         });
         // local storage does not support JSON data for that we are converting it into string format 
@@ -39,52 +40,62 @@ const Login = () => {
       toast.error("Something went wrong");
     }
   };
+
+
   return (
-    <Layout title="Login - Gaikwad-Enterprises">
-      <div className="form-container " style={{ minHeight: "90vh" }}>
-        <form onSubmit={handleSubmit}>
-          <h4 className="title">LOGIN FORM</h4>
+    <Layout title="Login - Gaikwad-Enterprises" >
+      <div className="lf-super-wrapper">
+        <div className="lf-main-wrapper">
+          <div className="lf-inner" >
+            <form onSubmit={handleSubmit}>
+              <h4 className="lf-title">LOGIN</h4>
 
-          <div className="mb-3">
-            <input
-              type="email"
-              autoFocus
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="form-control"
-              id="exampleInputEmail1"
-              placeholder="Enter Your Email "
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="form-control"
-              id="exampleInputPassword1"
-              placeholder="Enter Your Password"
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <button
-              type="button"
-              className="btn forgot-btn"
-              onClick={() => {
-                navigate("/forgot-password"); // by clicking the this we are redirecting to the forgot password page
-              }}
-            >
-              Forgot Password
-            </button>
-          </div>
+              <div className="lf-wrapper">
+                <label for="">Email</label>
+                <input
+                  type="email"
+                  autoFocus
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  id="exampleInputEmail1"
+                  // placeholder="Enter Your Email "
+                  className="lf-input"
 
-          <button type="submit" className="btn btn-primary">
-            LOGIN
-          </button>
-        </form>
+                />
+              </div>
+              <div className="lf-wrapper">
+                <label for="">Password</label>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="lf-input"
+                  id="exampleInputPassword1"
+                  // placeholder="Enter Your Password"
+                  required
+                />
+              </div>
+              <div className="lf-span-wrapper">
+                <span
+                  className="lf-span"
+                  onClick={() => {
+                    navigate("/forgot-password"); // by clicking the this we are redirecting to the forgot password page
+                  }}
+                >
+                  Forgot Password?
+                </span>
+                <button type="submit" className="lf-btns">
+                LOGIN
+              </button>
+              </div>
+
+             
+            </form>
+          </div>
+        </div>
       </div>
+
     </Layout>
   );
 };

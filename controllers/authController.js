@@ -83,7 +83,7 @@ export const loginController = async (req, res) => {
         message: "Invalid Password",
       });
     }
-    // below we have created the token using sign method of JWT which will expire in 7days using the JWT_SECRET key that we have created in .env file
+    // below we have created the token with the help of id using sign method of JWT which will expire in 7days using the JWT_SECRET key that we have created in .env file
     const token = await JWT.sign({ _id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "7d",
     });

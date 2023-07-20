@@ -100,3 +100,7 @@
     cursor: pointer;
     color: #888;
 }
+
+.my-carousel{
+    object-fit: cover;
+}
