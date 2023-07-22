@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { Select } from "antd";
 import { useNavigate } from "react-router-dom";
+import "./createProduct.scss"
 const { Option } = Select;
 
 const CreateProduct = () => {
@@ -64,7 +65,7 @@ const CreateProduct = () => {
   };
 
   return (
-    <Layout title={"Dashboard - Create Product"}>
+    <Layout title={"Dashboard - Create Product"} className="dashboard">
     
       <div className="container-fluid m-3 p-3 dashboard">
         <div className="row">
@@ -72,26 +73,26 @@ const CreateProduct = () => {
             <AdminMenu />
           </div>
           <div className="col-md-9">
-            <h1>Create Product</h1>
+            <h1 className="cp-title">Create Product</h1>
             <div className="m-1 w-75">
               <Select
                 bordered={false}
                 placeholder="Select a category"
                 size="large"
                 showSearch
-                className="form-select mb-3"
+                className="form-select mb-3 select"
                 onChange={(value) => {
                   setCategory(value);
                 }}
               >
                 {categories?.map((c) => (
-                  <Option key={c._id} value={c._id}>
+                  <Option key={c._id} value={c._id} className="option">
                     {c.name}
                   </Option>
                 ))}
               </Select>
-              <div className="mb-3">
-                <label className="btn btn-outline-secondary col-md-12">
+              <div className="mb-3 uploadPhoto">
+                <label className="btn btn-outline-secondary col-md-12 uploadPhoto">
                   {photo ? photo.name : "Upload Photo"}
                   <input
                     type="file"
@@ -119,7 +120,7 @@ const CreateProduct = () => {
                   type="text"
                   value={name}
                   placeholder="write a name"
-                  className="form-control"
+                  className="form-control cpInput "
                   onChange={(e) => setName(e.target.value)}
                 />
               </div>
@@ -128,7 +129,7 @@ const CreateProduct = () => {
                   type="text"
                   value={description}
                   placeholder="write a description"
-                  className="form-control"
+                  className="form-control cpInput"
                   onChange={(e) => setDescription(e.target.value)}
                 />
               </div>
@@ -138,7 +139,7 @@ const CreateProduct = () => {
                   type="number"
                   value={price}
                   placeholder="write a Price"
-                  className="form-control"
+                  className="form-control cpInput"
                   onChange={(e) => setPrice(e.target.value)}
                 />
               </div>
@@ -147,7 +148,7 @@ const CreateProduct = () => {
                   type="number"
                   value={quantity}
                   placeholder="write a quantity"
-                  className="form-control"
+                  className="form-control cpInput"
                   onChange={(e) => setQuantity(e.target.value)}
                 />
               </div>
@@ -157,7 +158,7 @@ const CreateProduct = () => {
                   placeholder="Select Shipping "
                   size="large"
                   showSearch
-                  className="form-select mb-3"
+                  className="form-select mb-3 cpInput"
                   onChange={(value) => {
                     setShipping(value);
                   }}
@@ -166,8 +167,8 @@ const CreateProduct = () => {
                   <Option value="1">Yes</Option>
                 </Select>
               </div>
-              <div className="mb-3">
-                <button className="btn btn-primary" onClick={handleCreate}>
+              <div className="mb-3 " >
+                <button className="cp-btns" onClick={handleCreate}>
                   CREATE PRODUCT
                 </button>
               </div>

@@ -1,0 +1,68 @@
+.scart{
+    background-color: white !important;
+    border: none;
+}
+
+.searchContainer{
+    margin-top: 62px;
+}
+
+
+.sproduct-img{
+    width: 30px;
+    width: 100%;
+    object-fit: contain;
+    min-height: 220px;
+    max-height: 220px;
+    background-color: #eee;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+.sproduct-img:hover{
+    transform: scale(1.06);
+
+}
+
+.s-price-and-name-container{
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.s-my-product-name{
+    font-size: 15px;
+    font-weight: 700;
+    color: #000
+}
+
+.s-my-product-price{
+    font-size: 17px;
+    color: green;
+    font-weight: 700;
+}
+
+.s-my-product-desc{
+    font-size: 14px;
+    color: #777;
+    text-align: left;
+    margin-top: 1px;
+}
+
+.s-btn-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.s-md-btn{
+    border: 1px solid rgb(45, 45, 48);
+    padding: 5px 7px;
+    /* background-color: rgb(158, 158, 243); */
+    border-radius: 12px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.s-md-btn:hover{
+    background-color: #ebe5e5;
+}

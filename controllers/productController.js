@@ -13,8 +13,8 @@ export const createProductController = async (req, res) => {
   try {
     const { name, description, price, category, quantity, shipping } =
       req.fields;
-    const { photo } = req.files;
-    //alidation
+    const { photo } = req.files; // photo is getting by req.files according to formidable package
+    //validation
     switch (true) {
       case !name:
         return res.status(500).send({ error: "Name is Required" });

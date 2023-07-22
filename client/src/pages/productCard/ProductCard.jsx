@@ -11,7 +11,7 @@ const ProductCard = ({ p, cart, setCart }) => {
     <div className="my-products-container" key={p._id} >
       <img
         src={`/api/v1/product/product-photo/${p._id}`}
-        className=" my-category-img" //
+        className=" my-category-img" 
         alt={p.name}
         onClick={() => navigate(`/product/${p.slug}`)}
       />

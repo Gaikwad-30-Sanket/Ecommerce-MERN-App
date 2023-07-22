@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap');
+
+.ad-card {
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    font-family: 'Inter', sans-serif;
+
+  }
+  
+  /* Style for the h3 elements inside the "ad-card" */
+  .ad-card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333333;
+  }
+  
+  /* Style for the "span" elements inside the "ad-card" */
+  .ad-card span {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  /* Media query for responsiveness - adjust the styles for smaller screens */
+  @media (max-width: 768px) {
+    .ad-card {
+      max-width: 100%; /* Adjust the max-width to fit the screen */
+      box-shadow: none; /* Remove the box shadow on smaller screens */
+    }
+  }
+  
+  /* Additional styles for better presentation on smaller screens */
+  @media (max-width: 480px) {
+    .ad-card h3 {
+      font-size: 16px; /* Reduce font size on smaller screens */
+    }
+  
+    .ad-card span {
+      display: block; /* Display the span as a block for better presentation */
+      margin-bottom: 5px; /* Add some space between the span and the content on smaller screens */
+    }
+  }
+  

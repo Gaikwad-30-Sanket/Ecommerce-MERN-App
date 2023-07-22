@@ -1,10 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./adminMenu.css"
 const AdminMenu = () => {
   return (
     <>
       <div className="text-center">
-        <div className="list-group dashboard-menu">
+        <div className="list-group ">
           <h4>Admin Panel</h4>
           <NavLink
             to="/dashboard/admin/create-category"
@@ -25,17 +26,12 @@ const AdminMenu = () => {
             Products
           </NavLink>
           <NavLink
-            to="/dashboard/admin/orders"
+            to="/dashboard/admin/"
             className="list-group-item list-group-item-action"
           >
-            Orders
+            Admin Info
           </NavLink>
-          {/* <NavLink
-            to="/dashboard/admin/users"
-            className="list-group-item list-group-item-action"
-          >
-            Users
-          </NavLink> */}
+       
         </div>
       </div>
     </>

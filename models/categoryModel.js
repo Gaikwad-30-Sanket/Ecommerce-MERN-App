@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 
 const categorySchema = new mongoose.Schema({
-  name: {
-    type: String,
+  name: {  // origional name
+    type: String, 
   },
-  slug: {
+  slug: {   // name into slag form means without white spaces
     type: String,
     lowercase: true,
   },

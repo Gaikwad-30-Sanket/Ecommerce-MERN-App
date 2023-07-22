@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap');
+
+
+.product-details{
+    font-family: 'Inter', sans-serif;
+
+}
+.pd-card-img-top{
+    width: 30vw;
+}
+
+.pdtext-center {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+  }
+  
+  h6 {
+    font-size: 16px;
+    margin: 10px 0;
+    line-height: 1;
+  }
+  
+  h6 span {
+    font-weight: bolder;
+    color: black;
+  }
+  
+  h6:last-child {
+    margin-bottom: 0;
+  }
+  
+  .pd-btn{
+    border: 2px solid green;
+    background-color: rgb(95, 230, 95);
+    color: black;
+  }
+
+  .pd-btn:hover{
+    background-color: rgb(15, 181, 15);
+  }
+
+  .pdproduct-img{
+    width: 100%;
+    object-fit: contain;
+    min-height: 200px;
+    max-height: 200px;
+    background-color: #eee;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .pdcart{
+    background-color: white !important;
+    border: none;
+  }
+
+  .pd-btn2{
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 8px !important;
+    color: rgb(248, 248, 248);
+    color: black;
+  }
+  .pd-btn2:hover{
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgb(236, 234, 234);
+
+  }
+  

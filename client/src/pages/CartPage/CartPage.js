@@ -8,6 +8,7 @@ import DropIn from "braintree-web-drop-in-react";
 import { AiFillWarning } from "react-icons/ai";
 import axios from "axios";
 import toast from "react-hot-toast";
+import "./cartPage.css"
 import "../../styles/CartStyles.css";
 
 const CartPage = () => {
@@ -63,10 +64,10 @@ const CartPage = () => {
           </div>
         </div>
         <div className="container ">
-          <div className="row ">
-            <div className="col-md-7  p-0 m-0">
+          <div className="row cartPage-container ">
+            <div className="col-md-7  p-0 m-0 ">
               {cart?.map((p) => (
-                <div className="row card flex-row" key={p._id}>
+                <div className="row card flex-row " key={p._id}>
                   <div className="col-md-4">
                     <img
                       src={`/api/v1/product/product-photo/${p._id}`}

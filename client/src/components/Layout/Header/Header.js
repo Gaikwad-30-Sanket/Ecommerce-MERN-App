@@ -57,16 +57,16 @@ const Header = () => {
                 >
                   Categories
                 </Link>
-                <ul className="dropdown-menu">
+                <ul className="dropdown-menu listContaint">
                   <li>
-                    <Link className="dropdown-item" to={"/categories"}>
+                    <Link className="dropdown-item listContaintitemTop" to={"/categories"}>
                       All Categories
                     </Link>
                   </li>
                   {categories?.map((c) => (
-                    <li>
+                    <li className="">
                       <Link
-                        className="dropdown-item"
+                        className="dropdown-item listContaintitem"
                         to={`/category/${c.slug}`}
                       >
                         {c.name}
@@ -101,13 +101,13 @@ const Header = () => {
                     >
                       {auth?.user?.name} {/* first we check for auth and after that we check user and after that we get the name  */}
                     </NavLink>
-                    <ul className="dropdown-menu">
+                    <ul className="dropdown-menu listContaint">
                       <li>
                         <NavLink
                           to={`/dashboard/${
                             auth?.user?.role === 1 ? "admin" : "user" // if role is 1 then go to the /dashboard/admin other wise go to /dashboard/user
                           }`}
-                          className="dropdown-item"
+                          className="dropdown-item listContaintitem header-dropdown-item"
                         >
                           Dashboard
                         </NavLink>
@@ -116,7 +116,7 @@ const Header = () => {
                         <NavLink
                           onClick={handleLogout}  //as we click on logout button this function will run
                           to="/login"
-                          className="dropdown-item"
+                          className="dropdown-item listContaintitem"
                         >
                           Logout
                         </NavLink>

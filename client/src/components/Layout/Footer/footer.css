@@ -1,0 +1,21 @@
+
+.footer {
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    background: #000000; 
+
+    background-color: #607289;
+  }
+  
+  .footer a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    padding-top: 0px;
+  }
+  
+  .footer a:hover {
+    color: #a1bdf3;
+    border-bottom: 3px solid #f8d9d9;
+  }

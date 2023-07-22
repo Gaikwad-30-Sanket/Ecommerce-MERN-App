@@ -1,0 +1,59 @@
+/* Styles for the AdminMenu component */
+.text-center {
+    margin-top: 30px;
+  }
+  
+  .list-group {
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 8px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    background-color: #fff;
+    outline: none; /* Remove outline from the whole component */
+  }
+  
+  .list-group h4 {
+    text-align: center;
+    padding: 10px;
+    background-color: #000000;
+    color: #fff;
+    border-radius: 10px;
+    /* border-top-left-radius: 8px;
+    border-top-right-radius: 8px; */
+    margin-bottom: 10px;
+  }
+  
+  .list-group-item {
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+    border-radius: 15px;
+    color: #333;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .list-group-item:last-child {
+    border-bottom: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  
+  .list-group-item:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .list-group-item.active {
+    background-color: #94c5f9;
+    color: #fff;
+  }
+  
+  .list-group-item.active:hover {
+    background-color: #4295ef;
+  }
+  
+  /* Add some spacing between the list items */
+  .list-group-item-action {
+    padding: 10px 15px;
+  }
+  

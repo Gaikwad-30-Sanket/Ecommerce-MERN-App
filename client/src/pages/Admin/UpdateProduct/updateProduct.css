@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap');
 
-.cp-title{
-    // text-align: center;
+.dashboard{
+    font-family: 'Inter', sans-serif;
+}
+
+.upcontainer{
+    margin-top: 80px;
+}
+
+.up-title{
     margin-left: 18vw;
     font-size: 31px;
     font-weight: bolder;
@@ -10,11 +17,7 @@
     color: #333;
 }
 
-.dashboard{
-    font-family: 'Inter', sans-serif;
-}
-
-.select{
+.upselect{
     padding: 3px 5px; 
     background-color: white;
     border:none;
@@ -23,25 +26,27 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
 }
-.option{
+.upoption{
     
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   
 }
-.option:hover{
+.upoption:hover{
     background-color: rgb(226, 227, 240) !important;
 }
 
-.uploadPhoto{
+
+.upuploadPhoto{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: none;
 }
-.uploadPhoto:hover{
+.upuploadPhoto:hover{
     background-color: rgb(223, 235, 245);
     color: black;
 }
 
-.cpInput {
+
+.upInput {
     padding: 10px 20px;
     font-size: 14px;
     border-radius: 10px;
@@ -52,19 +57,23 @@
 
   }
   
-  .cpInput::placeholder {
+  .upInput::placeholder {
     color: #999;
     text-align: center;
     font-size: larger;
   }
   
-  .cpInput:focus {
+  .upInput:focus {
     outline: none;
     border-color: #414346;
     box-shadow: 0 0 5px #43464a;
   }
   
-  .cp-btns {
+
+ 
+ 
+  
+  .up-btns {
     padding: 8px 38px;
     border-radius: 50px;
     outline: none;
@@ -77,6 +86,16 @@
     font-size: 14px;
     margin-left: 120px;
   }
-.cp-btns:hover{
+  .up-btns:hover{
     background-color: rgb(81, 151, 248);
-}
+  }
+
+  .upDeleteButton{
+    background-color: rgb(243, 134, 160);
+    border: 2px solid rgb(255, 0, 0);
+  }
+
+  .upDeleteButton:hover{
+    background-color: rgb(248, 81, 115);
+  }
+  

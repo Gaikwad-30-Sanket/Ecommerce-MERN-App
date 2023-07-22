@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import CategoryForm from "../../../components/Form/CategoryForm/CategoryForm";
 import { Modal } from "antd";
+import "./CreateCategory.css"
 const CreateCategory = () => {
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");
@@ -94,7 +95,7 @@ const CreateCategory = () => {
             <AdminMenu />
           </div>
           <div className="col-md-9">
-            <h1>Manage Category</h1>
+            <h1 className="ctg-title">Manage Category</h1>
             <div className="p-3 w-50">
               <CategoryForm
                 handleSubmit={handleSubmit}
@@ -105,7 +106,7 @@ const CreateCategory = () => {
             <div className="w-75">
               <table className="table">
                 <thead>
-                  <tr>
+                  <tr >
                     <th scope="col">Name</th>
                     <th scope="col">Actions</th>
                   </tr>
@@ -113,11 +114,11 @@ const CreateCategory = () => {
                 <tbody>
                   {categories?.map((c) => (
                     <>
-                      <tr>
+                      <tr className="ctg-item">
                         <td key={c._id}>{c.name}</td>
                         <td>
                           <button
-                            className="btn btn-primary ms-2"
+                            className="cclf-btns ccedit-btn"
                             onClick={() => {
                               setVisible(true);
                               setUpdatedName(c.name);
@@ -127,7 +128,7 @@ const CreateCategory = () => {
                             Edit
                           </button>
                           <button
-                            className="btn btn-danger ms-2"
+                            className="cclf-btns"
                             onClick={() => {
                               handleDelete(c._id);
                             }}

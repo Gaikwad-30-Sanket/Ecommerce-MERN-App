@@ -19,8 +19,8 @@ const productSchema = new mongoose.Schema(
       required: true,
     },
     category: {
-      type: mongoose.ObjectId,
-      ref: "Category",
+      type: mongoose.ObjectId, // type is id of category object
+      ref: "Category", //we are taking the reference from Category collection(model)
       required: true,
     },
     quantity: {
@@ -31,6 +31,7 @@ const productSchema = new mongoose.Schema(
       data: Buffer,
       contentType: String,
     },
+    //Buffer is a built-in Node.js class used to represent binary data. In this context, it is used to store the binary representation of an image or file. 
     shipping: {
       type: Boolean,
     },

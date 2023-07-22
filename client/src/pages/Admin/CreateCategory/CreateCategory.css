@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap');
+.dashboard{
+    font-family: 'Inter', sans-serif;
+}
+.cclf-btns {
+    padding: 8px 38px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    color: rgb(66, 57, 57);
+    background-color: rgb(243, 199, 199);
+    border: 2px solid red;
+    display: inline;
+    width: fit-content;
+    font-size: 14px;
+    margin-left: 120px;
+  }
+.cclf-btns:hover{
+    background-color: red;
+}
+  .ccedit-btn{
+    background-color: rgb(129, 198, 129);
+    border: 2px solid green;
+  }
+  .ccedit-btn:hover{
+    background-color: green;
+  }
+
+  .ctg-title{
+        text-align: center;
+        font-size: 29px;
+        font-weight: bolder;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        color: #333;
+  }
+
+ 
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table thead th {
+    background-color: #63a6ee;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 2px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .table tbody tr {
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .table tbody td {
+    padding: 10px 20px;
+  }
+
+  .ctg-item:hover{
+    background-color: rgb(211, 229, 244);
+    border-radius: 10px;
+  
+  }

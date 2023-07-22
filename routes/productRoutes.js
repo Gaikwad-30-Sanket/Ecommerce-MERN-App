@@ -23,7 +23,7 @@ router.post(
   "/create-product",
   requireSignIn,
   isAdmin,
-  formidable(),
+  formidable(),  // this is in built middleware of formidable package used for uploading the photo or files
   createProductController
 );
 //routes

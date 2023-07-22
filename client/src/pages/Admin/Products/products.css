@@ -1,0 +1,35 @@
+.pcart{
+    min-height: 280px !important;
+    max-height: 280px !important;
+    /* background-color: red; */
+    /* border: 3px solid black; */
+    background-color: #fff;
+    border: none;
+}
+
+/* .card-img-top{
+    height: 180px;
+    width: 280px;
+} */
+
+
+.product-img {
+    width: 100%;
+    object-fit: contain;
+    min-height: 200px;
+    max-height: 200px;
+    background-color: #eee;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-img:hover{
+    transform: scale(1.03);
+}
+
+.pcard-title{
+    font-weight: 600;
+    margin-bottom: 1px;
+    margin-top: 1px;
+}

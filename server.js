@@ -27,8 +27,8 @@ app.use("/api/v1/auth", authRoutes); // api - version- route
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
 app.use(express.static(path.join(__dirname, './client/build')))
-//rest api
-app.use('*', function(req, resp)
+//rest api 
+app.use('*', function(req, resp) 
 {
   resp.sendFile(path.join(__dirname,'./client/build/index.html')); 
 })

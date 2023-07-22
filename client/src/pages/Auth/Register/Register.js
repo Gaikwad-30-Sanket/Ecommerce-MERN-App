@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom"; // with the help of it we can na
 import toast from "react-hot-toast";
 // import "../../../styles/AuthStyles.css";
 import "./register.scss"
+// import "../Login/login.scss"
 const Register = () => {
   const [name, setName] = useState(""); //we are keeping initial value as empty
   const [email, setEmail] = useState("");
@@ -112,7 +113,7 @@ const Register = () => {
               required
             />
           </div>
-          <button type="submit" className="lf-btns">
+          <button type="submit" className="xlf-btns ">
             REGISTER
           </button>
         </form>

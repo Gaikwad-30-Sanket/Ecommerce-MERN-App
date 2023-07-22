@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap');
+.ctg-container{
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    width: 52vw;
+   
+}
+
+
+.cflf-btns {
+    padding: 8px 38px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    color: rgb(66, 57, 57);
+    background-color: rgb(123, 175, 243);
+    border: 2px solid rgb(4, 0, 255);
+    display: inline;
+    width: fit-content;
+    font-size: 16px;
+    /* margin-left: 120px; */
+  }
+.cflf-btns:hover{
+    background-color: rgb(40, 75, 214);
+}
+.lf-input{
+    width: 500px;
+    outline: none;
+    border: 2px solid gray;
+    /* background-color: rgb(138, 214, 242); */
+    padding: 8px 4px;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 15px;
+}

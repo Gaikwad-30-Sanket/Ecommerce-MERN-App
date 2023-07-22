@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { Select } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
+import "./updateProduct.css"
 const { Option } = Select;
 
 const UpdateProduct = () => {
@@ -103,34 +104,34 @@ const UpdateProduct = () => {
     }
   };
   return (
-    <Layout title={"Dashboard - Create Product"}>
-      <div className="container-fluid m-3 p-3">
+    <Layout title={"Dashboard - Create Product"} className="dashboard">
+      <div className="container-fluid  upcontainer">
         <div className="row">
           <div className="col-md-3">
             <AdminMenu />
           </div>
           <div className="col-md-9">
-            <h1>Update Product</h1>
+            <h1 className="up-title">Update Product</h1>
             <div className="m-1 w-75">
               <Select
                 bordered={false}
                 placeholder="Select a category"
                 size="large"
                 showSearch
-                className="form-select mb-3"
+                className="form-select mb-3 upselect"
                 onChange={(value) => {
                   setCategory(value);
                 }}
                 value={category}
               >
                 {categories?.map((c) => (
-                  <Option key={c._id} value={c._id}>
+                  <Option key={c._id} value={c._id} className="upoption">
                     {c.name}
                   </Option>
                 ))}
               </Select>
-              <div className="mb-3">
-                <label className="btn btn-outline-secondary col-md-12">
+              <div className="mb-3 upuploadPhoto">
+                <label className="btn btn-outline-secondary col-md-12 upuploadPhoto">
                   {photo ? photo.name : "Upload Photo"}
                   <input
                     type="file"
@@ -148,7 +149,7 @@ const UpdateProduct = () => {
                       src={URL.createObjectURL(photo)}
                       alt="product_photo"
                       height={"200px"}
-                      className="img img-responsive"
+                      className="img img-responsive "
                     />
                   </div>
                 ) : (
@@ -167,7 +168,7 @@ const UpdateProduct = () => {
                   type="text"
                   value={name}
                   placeholder="write a name"
-                  className="form-control"
+                  className="form-control upInput"
                   onChange={(e) => setName(e.target.value)}
                 />
               </div>
@@ -176,7 +177,7 @@ const UpdateProduct = () => {
                   type="text"
                   value={description}
                   placeholder="write a description"
-                  className="form-control"
+                  className="form-control upInput"
                   onChange={(e) => setDescription(e.target.value)}
                 />
               </div>
@@ -186,7 +187,7 @@ const UpdateProduct = () => {
                   type="number"
                   value={price}
                   placeholder="write a Price"
-                  className="form-control"
+                  className="form-control upInput"
                   onChange={(e) => setPrice(e.target.value)}
                 />
               </div>
@@ -195,7 +196,7 @@ const UpdateProduct = () => {
                   type="number"
                   value={quantity}
                   placeholder="write a quantity"
-                  className="form-control"
+                  className="form-control upInput"
                   onChange={(e) => setQuantity(e.target.value)}
                 />
               </div>
@@ -205,7 +206,7 @@ const UpdateProduct = () => {
                   placeholder="Select Shipping "
                   size="large"
                   showSearch
-                  className="form-select mb-3"
+                  className="form-select mb-3 upInput"
                   onChange={(value) => {
                     setShipping(value);
                   }}
@@ -215,13 +216,13 @@ const UpdateProduct = () => {
                   <Option value="1">Yes</Option>
                 </Select>
               </div>
-              <div className="mb-3">
-                <button className="btn btn-primary" onClick={handleUpdate}>
+              <div className="mb-3 upUpdateButton">
+                <button className="btn  up-btns" onClick={handleUpdate}>
                   UPDATE PRODUCT
                 </button>
               </div>
-              <div className="mb-3">
-                <button className="btn btn-danger" onClick={handleDelete}>
+              <div className="mb-3 ">
+                <button className="btn upDeleteButton up-btns" onClick={handleDelete}>
                   DELETE PRODUCT
                 </button>
               </div>

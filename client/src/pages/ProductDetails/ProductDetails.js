@@ -3,7 +3,7 @@ import Layout from "../../components/Layout/Layout/Layout";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import "../../styles/ProductDetailsStyles.css";
-
+import "./productDetails.css"
 const ProductDetails = () => {
   const params = useParams();
   const navigate = useNavigate();
@@ -43,26 +43,26 @@ const ProductDetails = () => {
         <div className="col-md-6">
           <img
             src={`/api/v1/product/product-photo/${product._id}`}
-            className="card-img-top"
+            className="card-img-top  pd-card-img-top"
             alt={product.name}
             height="300"
             width={"350px"}
           />
         </div>
         <div className="col-md-6 product-details-info">
-          <h1 className="text-center">Product Details</h1>
+          <h1 className="pdtext-center">Product Details</h1>
           <hr />
-          <h6>Name : {product.name}</h6>
-          <h6>Description : {product.description}</h6>
+          <h6><span>Name : </span> {product.name}</h6>
+          <h6><span>Description : </span>  {product.description}</h6>
           <h6>
-            Price :
+            <span>Price : </span> 
             {product?.price?.toLocaleString("en-US", {
               style: "currency",
               currency: "INR",
             })}
           </h6>
-          <h6>Category : {product?.category?.name}</h6>
-          <button class="btn btn-secondary ms-1">ADD TO CART</button>
+          <h6> <span>Category : </span>  {product?.category?.name}</h6>
+          <button class="btn btn-secondary ms-1 pd-btn">ADD TO CART</button>
         </div>
       </div>
       <hr />
@@ -71,15 +71,15 @@ const ProductDetails = () => {
         {relatedProducts.length < 1 && (
           <p className="text-center">No Similar Products found</p>
         )}
-        <div className="d-flex flex-wrap">
+        <div className="d-flex flex-wrap spContainer">
           {relatedProducts?.map((p) => (
-            <div className="card m-2" key={p._id}>
+            <div className="card m-2 pdcart" key={p._id}>
               <img
                 src={`/api/v1/product/product-photo/${p._id}`}
-                className="card-img-top"
+                className="card-img-top pdproduct-img"
                 alt={p.name}
               />
-              <div className="card-body">
+              <div className="card-body ">
                 <div className="card-name-price">
                   <h5 className="card-title">{p.name}</h5>
                   <h5 className="card-title card-price">
@@ -90,11 +90,11 @@ const ProductDetails = () => {
                   </h5>
                 </div>
                 <p className="card-text ">
-                  {p.description.substring(0, 60)}...
+                  {p.description.substring(0, 30)}...
                 </p>
                 <div className="card-name-price">
                   <button
-                    className="btn btn-info ms-1"
+                    className="btn  pd-btn2"
                     onClick={() => navigate(`/product/${p.slug}`)}
                   >
                     More Details
