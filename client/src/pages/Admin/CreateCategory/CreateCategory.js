@@ -8,7 +8,7 @@ import CategoryForm from "../../../components/Form/CategoryForm/CategoryForm";
 import { Modal } from "antd";
 import "./CreateCategory.css"
 const CreateCategory = () => {
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState([]); // there will be multiple values for the we are using array
   const [name, setName] = useState("");
   const [visible, setVisible] = useState(false);
   const [selected, setSelected] = useState(null);
@@ -18,10 +18,10 @@ const CreateCategory = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post("/api/v1/category/create-category", {
-        name,
+        name,  // we are seding this name to the backend
       });
       if (data?.success) {
-        toast.success(`${name} is created`);
+        toast.success(`${name} is created`); 
         getAllCategory();
       } else {
         toast.error(data.message);
@@ -32,16 +32,16 @@ const CreateCategory = () => {
     }
   };
 
-  //get all cat
+  //get all category
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get("/api/v1/category/get-category");
+      const { data } = await axios.get("/api/v1/category/get-category"); // using axios we are sending network request of get
       if (data?.success) {
-        setCategories(data?.category);
+        setCategories(data?.category); // we are gettgin category from backend name should be same 
       }
     } catch (error) {
       console.log(error);
-      toast.error("Something wwent wrong in getting catgeory");
+      toast.error("Something went wrong in getting category");
     }
   };
 
@@ -74,7 +74,7 @@ const CreateCategory = () => {
   const handleDelete = async (pId) => {
     try {
       const { data } = await axios.delete(
-        `/api/v1/category/delete-category/${pId}`
+        `/api/v1/category/delete-category/${pId}` // in backend it will be taken as  .../delete-category/:id
       );
       if (data.success) {
         toast.success(`category is deleted`);
@@ -98,8 +98,8 @@ const CreateCategory = () => {
             <h1 className="ctg-title">Manage Category</h1>
             <div className="p-3 w-50">
               <CategoryForm
-                handleSubmit={handleSubmit}
-                value={name}
+                handleSubmit={handleSubmit} // we are sending these values to CategoryForm as a props
+                value={name} // we are sending name as a value in categoryForm
                 setValue={setName}
               />
             </div>
@@ -120,7 +120,7 @@ const CreateCategory = () => {
                           <button
                             className="cclf-btns ccedit-btn"
                             onClick={() => {
-                              setVisible(true);
+                              setVisible(true); // if we set it is true then model component from antd design will pop up
                               setUpdatedName(c.name);
                               setSelected(c);
                             }}
@@ -142,7 +142,7 @@ const CreateCategory = () => {
                 </tbody>
               </table>
             </div>
-            <Modal
+            <Modal // this model is taken from ant design
               onCancel={() => setVisible(false)}
               footer={null}
               visible={visible}

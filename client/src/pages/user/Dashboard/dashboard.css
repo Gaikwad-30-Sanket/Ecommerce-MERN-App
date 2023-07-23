@@ -1,0 +1,21 @@
+.ad-card {
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    font-family: 'Inter', sans-serif;
+
+  }
+
+  .ad-card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333333;
+  }
+  
+  .ad-card span {
+    font-weight: bold;
+    color: #000000;
+  }

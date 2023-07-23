@@ -4,6 +4,7 @@ import Layout from "../../../components/Layout/Layout/Layout";
 import { useAuth } from "../../../context/auth";
 import toast from "react-hot-toast";
 import axios from "axios";
+import "./profile.css"
 const Profile = () => {
   //context
   const [auth, setAuth] = useAuth();
@@ -57,15 +58,15 @@ const Profile = () => {
             <UserMenu />
           </div>
           <div className="col-md-8">
-            <div className="form-container" style={{ marginTop: "-40px" }}>
+            <div className="form-container p-dashboard" style={{ marginTop: "-40px" }}>
               <form onSubmit={handleSubmit}>
-                <h4 className="title">USER PROFILE</h4>
+                <h4 className="p-title">USER PROFILE</h4>
                 <div className="mb-3">
                   <input
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="form-control"
+                    className="pInput"
                     id="exampleInputEmail1"
                     placeholder="Enter Your Name"
                     autoFocus
@@ -76,7 +77,7 @@ const Profile = () => {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="form-control"
+                    className="pInput pxInput"
                     id="exampleInputEmail1"
                     placeholder="Enter Your Email "
                     disabled
@@ -87,7 +88,7 @@ const Profile = () => {
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="form-control"
+                    className="pInput"
                     id="exampleInputPassword1"
                     placeholder="Enter Your Password"
                   />
@@ -97,7 +98,7 @@ const Profile = () => {
                     type="text"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="form-control"
+                    className="pInput"
                     id="exampleInputEmail1"
                     placeholder="Enter Your Phone"
                   />
@@ -107,13 +108,13 @@ const Profile = () => {
                     type="text"
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
-                    className="form-control"
+                    className="pInput"
                     id="exampleInputEmail1"
                     placeholder="Enter Your Address"
                   />
                 </div>
 
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="p-btn">
                   UPDATE
                 </button>
               </form>

@@ -3,6 +3,7 @@ import React from "react";
 import Layout from "../../../components/Layout/Layout/Layout";
 import UserMenu from "../../../components/Layout/UserMenu/UserMenu";
 import { useAuth } from "../../../context/auth";
+import "./dashboard.css"
 const Dashboard = () => {     // we use rafce shortcut to crate functional component
   const [auth] = useAuth();
   return (
@@ -13,10 +14,10 @@ const Dashboard = () => {     // we use rafce shortcut to crate functional compo
             <UserMenu />
           </div>
           <div className="col-md-9">
-            <div className="card w-75 p-3">
-              <h3>{auth?.user?.name}</h3>
-              <h3>{auth?.user?.email}</h3>
-              <h3>{auth?.user?.address}</h3>
+            <div className="ad-card">
+              <h3><span>User Name</span> : {auth?.user?.name}</h3>
+              <h3><span>User Email</span> : {auth?.user?.email}</h3>
+              <h3><span>User address</span> : {auth?.user?.address}</h3>
             </div>
           </div>
         </div>

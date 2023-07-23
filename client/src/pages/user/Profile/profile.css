@@ -1,0 +1,38 @@
+ .p-title{
+    margin-left: 20vw;
+    font-size: 31px;
+    font-weight: bolder;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: #333;
+ }
+
+ .p-dashboard{
+    font-family: 'Inter', sans-serif;
+}
+
+.pInput{
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 0.5px solid #ccc;
+    margin-left: 2px;
+    color: #555;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.pxInput{
+    background-color: #ccc;
+}
+
+.p-btn{
+    border: 2px solid blue;
+    background-color: rgb(175, 175, 244);
+    padding: 7px 13px;
+    border-radius: 10px;
+}
+.p-btn:hover{
+    background-color: blue;
+    color: white;
+}

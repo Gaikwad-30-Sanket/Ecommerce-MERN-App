@@ -1,0 +1,59 @@
+
+.policy-container{
+    height: 1100px;
+    margin-top: 55px;
+}
+/* Add styles for the Privacy Policy container */
+.privacy-policy-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Add styles for the Privacy Policy heading */
+  .privacy-policy-heading {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff6600;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  /* Add styles for the Privacy Policy content */
+  .privacy-policy-content {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  /* Add styles for the section headings (Information We Collect, How We Use Your Information, etc.) */
+  .privacy-policy-content h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff4081;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Add styles for the contact information section */
+  .contact-info {
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+  }
+  
+  /* Add styles for hyperlinks */
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  

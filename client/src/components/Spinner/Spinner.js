@@ -1,6 +1,7 @@
 // we are making just for the reusablity 
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import "./spinner.css"
 const Spinner = ({ path = "login" }) => { // we are taking the path if path does not exits then we take path as login by default
   const [count, setCount] = useState(3); //making the initial count of spinner as 3
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ const Spinner = ({ path = "login" }) => { // we are taking the path if path does
   return (
     <>
       <div
-        className="d-flex flex-column justify-content-center align-items-center"
+        className="my-spinnner"
         style={{ height: "100vh" }}
       >
         <h1 className="Text-center">redirecting to you in {count} second </h1>

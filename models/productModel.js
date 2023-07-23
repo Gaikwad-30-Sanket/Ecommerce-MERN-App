@@ -28,8 +28,8 @@ const productSchema = new mongoose.Schema(
       required: true,
     },
     photo: {
-      data: Buffer,
-      contentType: String,
+      data: Buffer, // data is property and it type if buffer
+      contentType: String, //represent the media type of a file, such as images, audio, video, etc.
     },
     //Buffer is a built-in Node.js class used to represent binary data. In this context, it is used to store the binary representation of an image or file. 
     shipping: {

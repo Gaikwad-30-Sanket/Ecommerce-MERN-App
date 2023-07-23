@@ -3,7 +3,7 @@ import AdminMenu from "../../../components/Layout/AdminMenu/AdminMenu";
 import Layout from "../../../components/Layout/Layout/Layout";
 import { useAuth } from "../../../context/auth";
 import "./adminDashboard.css"
-const AdminDashboard = () => {
+const AdminDashboard = () => { 
   const [auth] = useAuth();
   return (
     <Layout>
@@ -13,7 +13,7 @@ const AdminDashboard = () => {
             <AdminMenu />c
           </div>
           <div className="col-md-9">
-            <div className="ad-card ">
+            <div className="ad-card">
               <h3> <span>Admin Name</span> : {auth?.user?.name}</h3>
               <h3> <span>Admin Email</span> : {auth?.user?.email}</h3>
               <h3> <span>Admin Contact</span> : {auth?.user?.phone}</h3>

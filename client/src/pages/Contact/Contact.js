@@ -1,10 +1,11 @@
 import React from "react";
 import Layout from "../../components/Layout/Layout/Layout";
 import { BiMailSend, BiPhoneCall, BiSupport } from "react-icons/bi";
+import "./contact.css"
 const Contact = () => {
   return (
-    <Layout title={"Contact us"}>
-      <div className="row contactus ">
+    <Layout title={"Contact us"} >
+      <div className="row contactus cpage-container">
         <div className="col-md-6 ">
           <img
             src="/images/contactus.jpeg" // images are present in public folder, for to use public directory contains there is no need to import
@@ -12,8 +13,8 @@ const Contact = () => {
             style={{ width: "100%" }}
           />
         </div>
-        <div className="col-md-4">
-          <h1 className="bg-dark p-2 text-white text-center">CONTACT US</h1>
+        <div className="col-md-4 ">
+          <h1 className=" p-2   contactUp-title">CONTACT US</h1>
           <p className="text-justify mt-2">
             any query and info about prodduct feel free to call anytime we 24X7
             vaialible

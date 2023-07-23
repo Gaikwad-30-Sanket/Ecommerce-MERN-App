@@ -1,0 +1,11 @@
+.cpage-container{
+    margin-top: 40px;
+}
+
+.contactUp-title{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+    background-color: white !important;
+    color: black;
+    text-align: center;
+    font-weight: bolder;
+}

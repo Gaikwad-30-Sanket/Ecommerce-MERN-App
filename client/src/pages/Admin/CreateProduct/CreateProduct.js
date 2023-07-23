@@ -41,7 +41,7 @@ const CreateProduct = () => {
   const handleCreate = async (e) => {
     e.preventDefault();
     try {
-      const productData = new FormData();
+      const productData = new FormData(); // we are sending data using the FormData
       productData.append("name", name);
       productData.append("description", description);
       productData.append("price", price);
@@ -107,7 +107,7 @@ const CreateProduct = () => {
                 {photo && (
                   <div className="text-center">
                     <img
-                      src={URL.createObjectURL(photo)}
+                      src={URL.createObjectURL(photo)}  //JavaScript function that creates a temporary URL representing the provided photo object. The createObjectURL function is used to generate a unique URL that points to the binary data of the photo object.
                       alt="product_photo"
                       height={"200px"}
                       className="img img-responsive"

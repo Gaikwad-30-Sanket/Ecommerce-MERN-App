@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";  //useEffect hook is used in functional components in React to perform side effects such as data fetching, 
 import { useNavigate } from "react-router-dom"; // hook is part of the React Router library and provides a way to programmatically navigate between different routes 
-import { Checkbox, Radio } from "antd";
+import { Checkbox, Radio } from "antd"; //antd library we are using for designing
 import { Prices } from "../../components/Prices";
 import { useCart } from "../../context/cart";
 import axios from "axios";
@@ -86,22 +86,22 @@ const HomePage = () => {
     }
   };
 
-  // filter by catagory
-  const handleFilter = (value, id) => {
+  // filter by category
+  const handleFilter = (value, id) => { // if this function is called then we made changes in checkbox
     let all = [...checked];
-    if (value) {
+    if (value) { // if we check then push checked item id into all array
       all.push(id);
     } else {
-      all = all.filter((c) => c !== id);
+      all = all.filter((c) => c !== id); // otherwise remove it
     }
     setChecked(all);
   };
   useEffect(() => {
-    if (!checked.length || !radio.length) getAllProducts();
-  }, [checked.length, radio.length]);
+    if (!checked.length || !radio.length) getAllProducts(); // if we not applying filter then only call getAllProducts()
+  }, [checked.length, radio.length]); // if checked length or radio length is changing then then this function will run
 
   useEffect(() => {
-    if (checked.length || radio.length) filterProduct();
+    if (checked.length || radio.length) filterProduct(); // if we apply the filter then call this function
   }, [checked, radio]);
 
   //get filterd product
@@ -131,7 +131,7 @@ const HomePage = () => {
         <div>
           <img
             className="my-carousel"
-            src={img1}
+            src="https://www.prizor.in/wp-content/uploads/2022/08/prizor-banner-2.jpg"
             style={{
               height: "400px",
               objectFit: "cover",
@@ -154,7 +154,7 @@ const HomePage = () => {
         <div>
           <img
             className="my-carousel"
-            src={img3}
+            src="https://img.freepik.com/premium-psd/horizontal-website-banne_451189-110.jpg"
             style={{
               height: "400px",
               objectFit: "cover",
@@ -165,25 +165,25 @@ const HomePage = () => {
       </Carousel>
       {/* banner image */}
 
-      <div className="container-fluid row mt-3 home-page">
-        <div className="col-md-3 filters">
-          <h4 className="text-center">Filter By Category</h4>
-          <div className="d-flex flex-column">
+      <div className="container-fluid row mt-3 home-page ">
+        <div className="col-md-3  hp-filter">
+          <h4 className="text-center hp-filter-title">Filter By Category</h4>
+          <div className="d-flex flex-column ">
             {categories?.map((c) => (
               <Checkbox
                 className="my-checkbox"
                 key={c._id}
-                onChange={(e) => handleFilter(e.target.checked, c._id)}
+                onChange={(e) => handleFilter(e.target.checked, c._id)} // e.target.checked represent checked status of check box true of checked and false for unchecked
               >
                 {c.name}
               </Checkbox>
             ))}
           </div>
           {/* price filter */}
-          <h4 className="text-center mt-4">Filter By Price</h4>
+          <h4 className="text-center mt-4 hp-filter-title">Filter By Price</h4>
           <div className="d-flex flex-column">
             <Radio.Group onChange={(e) => setRadio(e.target.value)}>
-              {Prices?.map((p) => (
+              {Prices?.map((p) => (  // everything above prices is defined under the prices component
                 <div key={p._id}>
                   <Radio className="my-radio" value={p.array}>
                     {p.name}
@@ -194,8 +194,8 @@ const HomePage = () => {
           </div>
           <div className="d-flex flex-column">
             <button
-              className="btn my-reset-button"
-              onClick={() => window.location.reload()}
+              className="my-reset-button"
+              onClick={() => window.location.reload()}  // here we are refreshing the page
             >
               RESET FILTERS
             </button>

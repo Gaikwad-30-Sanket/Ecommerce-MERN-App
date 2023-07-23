@@ -8,33 +8,6 @@
   box-sizing: border-box;
 }
 
-/* font-family: 'Poppins', sans-serif; */
-/* font-family: 'Playfair Display', serif; */
-/* font-family: 'Inter', sans-serif; */
-
-/* navbar css */
-/* ==========footer============= */
-
-.footer {
-  color: white;
-  padding-top: 5px;
-  padding-bottom: 2px;
-  background: #000000; 
-  background: -webkit-linear-gradient(
-    to right,
-    #434343,
-    #000000
-  ); 
-  background: linear-gradient(to right, #434343, #000000);
-}
-
-.footer a {
-  text-decoration: none;
-  color: white;
-  padding: 10px;
-  padding-top: 0px;
-}
-
 
 /* =================================
 ======== page not found css ======= */

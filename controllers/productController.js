@@ -32,10 +32,10 @@ export const createProductController = async (req, res) => {
           .send({ error: "photo is Required and should be less then 1mb" });
     }
 
-    const products = new productModel({ ...req.fields, slug: slugify(name) });
+    const products = new productModel({ ...req.fields, slug: slugify(name) }); //creating new object of productModel
     if (photo) {
-      products.photo.data = fs.readFileSync(photo.path);
-      products.photo.contentType = photo.type;
+      products.photo.data = fs.readFileSync(photo.path); //  reads the contents of the file (the binary data)
+      products.photo.contentType = photo.type; // content type like jpg, png etc. all types are supported
     }
     await products.save();
     res.status(201).send({
@@ -59,20 +59,20 @@ export const getProductController = async (req, res) => {
     const products = await productModel
       .find({})
       .populate("category")
-      .select("-photo")
-      .limit(12)
-      .sort({ createdAt: -1 });
+      .select("-photo") // find all except photo we are getting it in another request
+      .limit(12) // we are getting at most 12 objects
+      .sort({ createdAt: -1 }); //The value -1 indicates that the sorting order will be in descending order (from newest to oldest) we are sorting according to the timestamp
     res.status(200).send({
       success: true,
-      counTotal: products.length,
-      message: "ALlProducts ",
+      counTotal: products.length, // we are sending the length from backend to show in frontend
+      message: "AllProducts ",
       products,
     });
   } catch (error) {
     console.log(error);
     res.status(500).send({
       success: false,
-      message: "Erorr in getting products",
+      message: "error in getting products",
       error: error.message,
     });
   }
@@ -81,9 +81,9 @@ export const getProductController = async (req, res) => {
 export const getSingleProductController = async (req, res) => {
   try {
     const product = await productModel
-      .findOne({ slug: req.params.slug })
+      .findOne({ slug: req.params.slug }) // we are getting the slug in url
       .select("-photo")
-      .populate("category");
+      .populate("category"); // here we are getting complete object of category model rather than its id
     res.status(200).send({
       success: true,
       message: "Single Product Fetched",
@@ -93,7 +93,7 @@ export const getSingleProductController = async (req, res) => {
     console.log(error);
     res.status(500).send({
       success: false,
-      message: "Eror while getitng single product",
+      message: "Error while getitng single product",
       error,
     });
   }
@@ -104,14 +104,14 @@ export const productPhotoController = async (req, res) => {
   try {
     const product = await productModel.findById(req.params.pid).select("photo");
     if (product.photo.data) {
-      res.set("Content-type", product.photo.contentType);
+      res.set("Content-type", product.photo.contentType); // in response we are setting the content type of photo
       return res.status(200).send(product.photo.data);
     }
   } catch (error) {
     console.log(error);
     res.status(500).send({
       success: false,
-      message: "Erorr while getting photo",
+      message: "Error while getting photo",
       error,
     });
   }
@@ -188,10 +188,10 @@ export const updateProductController = async (req, res) => {
 export const productFiltersController = async (req, res) => {
   try {
     const { checked, radio } = req.body;
-    let args = {};
-    if (checked.length > 0) args.category = checked;
-    if (radio.length) args.price = { $gte: radio[0], $lte: radio[1] };
-    const products = await productModel.find(args);
+    let args = {};  //An empty args object is initialized, which will be used to build the MongoDB query 
+    if (checked.length > 0) args.category = checked; // category property is added to the args object with the value of the checked array. 
+    if (radio.length) args.price = { $gte: radio[0], $lte: radio[1] }; //gte greater than or equal to
+    const products = await productModel.find(args); // we are finding the products based on args
     res.status(200).send({
       success: true,
       products,
@@ -200,7 +200,7 @@ export const productFiltersController = async (req, res) => {
     console.log(error);
     res.status(400).send({
       success: false,
-      message: "Error WHile Filtering Products",
+      message: "Error during Filtering Products",
       error,
     });
   }
@@ -227,13 +227,13 @@ export const productCountController = async (req, res) => {
 // product list base on page
 export const productListController = async (req, res) => {
   try {
-    const perPage = 8;
+    const perPage = 8; // we are setting the limit per page
     const page = req.params.page ? req.params.page : 1;
     const products = await productModel
       .find({})
       .select("-photo")
-      .skip((page - 1) * perPage)
-      .limit(perPage)
+      .skip((page - 1) * perPage) //we are skipping these number of products
+      .limit(perPage) // maximum limit is perPage
       .sort({ createdAt: -1 });
     res.status(200).send({
       success: true,

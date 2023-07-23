@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.cp-cart{
+    /* background-color: red; */
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 48vw;
+}
+
+.cp-cart-name{
+    font-weight: bolder;
+    width: 100%;
+}
+
+.cp-cart-price{
+    color: green;
+    font-weight: bold;
+}
+
+.cp-btn{
+    border: 2px solid red;
+    background-color: rgb(252, 160, 160);
+    border-radius: 7px;
+    padding: 5px 8px;
+}
+.cp-btn:hover{
+    background-color: rgb(249, 68, 68);
+    color: white;
+    
+}
+
+.cp-container{
+    font-family: 'Poppins', sans-serif;
+}
+
+.cp-summary{
+    font-weight: bolder;
+}
+
+.cp-price{
+    font-weight: bold;
+}
+
+.cp-price span{
+    color: green;
+}
+
+.cp-add span{
+    color: red;
+}
+
+.cart-page h1{
+    background-color: white;
+}

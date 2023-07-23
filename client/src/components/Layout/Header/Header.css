@@ -59,6 +59,7 @@ font-family: 'Open Sans', sans-serif; */
   .listContaintitem:hover{
     background-color: #4e8ef4;
     border-bottom: 2px solid blue;
+    text-decoration: none;
     color: white;
   }
 

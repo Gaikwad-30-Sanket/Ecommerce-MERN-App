@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+.cp-container{
+    border: none;
+    font-family: 'Inter', sans-serif;
+}
+
+.cprod-text-center{
+    font-weight: 600;
+    font-size: 40px;
+    text-align: center;
+}
+
+.cprod-title{
+    font-size: 19px;
+    font-weight: 200;
+    text-align: center;
+}
+.cprod-title span{
+    color: green;
+}
+.cprod-card-img-top{
+    width: 100%;
+    object-fit: contain;
+    min-height: 200px;
+    max-height: 200px;
+    background-color: #eee;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+.cprod-card-img-top:hover{
+    transform: scale(1.03);
+
+}
+.cprod-title{
+    font-weight: 600;
+    margin-bottom: 1px;
+    margin-left: 0px;
+}
+
+.cprod-btn{
+    border: 1px solid black;
+    background-color: white;
+    padding: 4px 8px;
+    border-radius: 13px;
+}
+.cprod-btn:hover{
+    background-color: rgb(234, 237, 240);
+}
