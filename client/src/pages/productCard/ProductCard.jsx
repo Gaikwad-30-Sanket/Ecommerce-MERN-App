@@ -40,7 +40,7 @@ const ProductCard = ({ p, cart, setCart }) => {
           <button
             className="my-product-button"
             onClick={() => {
-              setCart([...cart, p]);
+              setCart([...cart, p]); // we are storing locally the items that are added to the cart
               localStorage.setItem(
                 "cart",
                 JSON.stringify([...cart, p])

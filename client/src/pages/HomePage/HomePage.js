@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";  //useEffect hook is used in functional components in React to perform side effects such as data fetching, 
 import { useNavigate } from "react-router-dom"; // hook is part of the React Router library and provides a way to programmatically navigate between different routes 
 import { Checkbox, Radio } from "antd"; //antd library we are using for designing
@@ -8,9 +6,7 @@ import { useCart } from "../../context/cart";
 import axios from "axios";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import img1 from "../../img/img1.jpg"
 import img2 from "../../img/img2.jpg"
-import img3 from "../../img/img3.jpg"
 
 import Layout from "../../components/Layout/Layout/Layout";
 import { AiOutlineReload } from "react-icons/ai";
@@ -19,7 +15,7 @@ import ProductCard from "../productCard/ProductCard";
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const [cart, setCart] = useCart();
+  const [cart, setCart] = useCart();  // this is global declared state
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [checked, setChecked] = useState([]);
@@ -29,10 +25,10 @@ const HomePage = () => {
   const [loading, setLoading] = useState(false);
 
 
-  //get all cat
+  //get all categories
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get("/api/v1/category/get-category");
+      const { data } = await axios.get("/api/v1/category/get-category"); // backend address we have added into package.json thats why we putting routes directlty
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -87,7 +83,7 @@ const HomePage = () => {
   };
 
   // filter by category
-  const handleFilter = (value, id) => { // if this function is called then we made changes in checkbox
+  const handleFilter = (value, id) => { // if this function is called means we made changes in checkbox
     let all = [...checked];
     if (value) { // if we check then push checked item id into all array
       all.push(id);

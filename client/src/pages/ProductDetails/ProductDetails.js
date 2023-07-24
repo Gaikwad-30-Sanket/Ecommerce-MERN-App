@@ -5,7 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import "../../styles/ProductDetailsStyles.css";
 import "./productDetails.css"
 const ProductDetails = () => {
-  const params = useParams();
+  const params = useParams(); // params is also a hook
   const navigate = useNavigate();
   const [product, setProduct] = useState({});
   const [relatedProducts, setRelatedProducts] = useState([]);
@@ -14,6 +14,7 @@ const ProductDetails = () => {
   useEffect(() => {
     if (params?.slug) getProduct();
   }, [params?.slug]);
+  
   //getProduct
   const getProduct = async () => {
     try {
@@ -68,7 +69,7 @@ const ProductDetails = () => {
       <hr />
       <div className="row container similar-products">
         <h4>Similar Products ➡️</h4>
-        {relatedProducts.length < 1 && (
+        {relatedProducts.length < 1 && ( // if we have no product then we are returning back with below massage of p tag then below code of this div will not get excecuted
           <p className="text-center">No Similar Products found</p>
         )}
         <div className="d-flex flex-wrap spContainer">

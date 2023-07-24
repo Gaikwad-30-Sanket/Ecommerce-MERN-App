@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import { useAuth } from "../../../context/auth"; 
 import toast from "react-hot-toast";
 import SearchInput from "../../Form/SearchInput/SearchInput";
-import useCategory from "../../../hooks/useCategory";
+import useCategory from "../../../hooks/useCategory"; // import custom hook which returns all the categories
 import { useCart } from "../../../context/cart";
 import { Badge } from "antd";
 import {MdShoppingCart} from "react-icons/md" //first two characters are name of library after slash you need to add that

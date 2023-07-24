@@ -254,9 +254,9 @@ export const searchProductController = async (req, res) => {
   try {
     const { keyword } = req.params;
     const resutls = await productModel
-      .find({
+      .find({ // we are finding the product based on the name or keyword
         $or: [
-          { name: { $regex: keyword, $options: "i" } },
+          { name: { $regex: keyword, $options: "i" } }, // as we write $options:"i" -> now it is not a case sensitive
           { description: { $regex: keyword, $options: "i" } },
         ],
       })
@@ -279,10 +279,10 @@ export const realtedProductController = async (req, res) => {
     const products = await productModel
       .find({
         category: cid,
-        _id: { $ne: pid },
+        _id: { $ne: pid }, // we are finding all the products except the current product
       })
       .select("-photo")
-      .limit(3)
+      .limit(3) // and we are sending 3 related products
       .populate("category");
     res.status(200).send({
       success: true,

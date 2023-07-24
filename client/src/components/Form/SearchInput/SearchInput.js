@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./SearchInput.css"
 const SearchInput = () => {
-  const [values, setValues] = useSearch();
+  const [values, setValues] = useSearch(); //this is globally made input state
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -13,7 +13,7 @@ const SearchInput = () => {
       const { data } = await axios.get(
         `/api/v1/product/search/${values.keyword}`
       );
-      setValues({ ...values, results: data });
+      setValues({ ...values, results: data }); // keeping the values as it is and adding the data into results which is defined inside the global state
       navigate("/search");
     } catch (error) {
       console.log(error);
@@ -32,7 +32,7 @@ const SearchInput = () => {
           placeholder="Search for products brand and more"
           aria-label="Search"
           value={values.keyword}
-          onChange={(e) => setValues({ ...values, keyword: e.target.value })}
+          onChange={(e) => setValues({ ...values, keyword: e.target.value })} //keyword is defined inside the context API
         />
         <button className="btn  my-search-button" type="submit">
           Search

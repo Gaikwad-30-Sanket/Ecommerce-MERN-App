@@ -4,7 +4,7 @@ const categorySchema = new mongoose.Schema({
   name: {  // origional name
     type: String, 
   },
-  slug: {   // name into slag form means without white spaces
+  slug: {   // name into slug form means without white spaces
     type: String,
     lowercase: true,
   },
