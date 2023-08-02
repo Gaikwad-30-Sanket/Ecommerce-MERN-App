@@ -1,10 +1,8 @@
 import productModel from "../models/productModel.js";
 import categoryModel from "../models/categoryModel.js";
-import braintree from "braintree";
 import fs from "fs"; // provides an API for interacting with the file system in Node.js.
 import slugify from "slugify";
 import dotenv from "dotenv";
-import orderModel from "../models/orderModel.js";
 
 dotenv.config();
 
@@ -319,62 +317,3 @@ export const productCategoryController = async (req, res) => {
   }
 };
 
-
-//payment gateway
-var gateway = new braintree.BraintreeGateway({
-  environment: braintree.Environment.Sandbox,
-  merchantId: process.env.BRAINTREE_MERCHANT_ID,
-  publicKey: process.env.BRAINTREE_PUBLIC_KEY,
-  privateKey: process.env.BRAINTREE_PRIVATE_KEY,
-});
-
-
-
-//payment gateway api token
- export const braintreeTokenController = async (req, res) => {
-  try {
-    gateway.clientToken.generate({}, function (err, response) { // response is the token
-      if (err) {
-        res.status(500).send(err);
-      } else {
-        res.send(response);
-      }
-    });
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-//payment
-export const brainTreePaymentController = async (req, res) => {
-  try {
-    const { nonce, cart } = req.body; //these controllers are form brain tree
-    let total = 0;
-    cart.map((i) => {  // here we are calculating the sum of all the cart items
-      total += i.price;
-    });
-    let newTransaction = gateway.transaction.sale(
-      {
-        amount: total,
-        paymentMethodNonce: nonce,
-        options: {
-          submitForSettlement: true,
-        },
-      },
-      function (error, result) {
-        if (result) {
-          const order = new orderModel({
-            products: cart,
-            payment: result,
-            buyer: req.user._id, // as we are adding the middleware of require singIn by this we are getting id of the user
-          }).save();
-          res.json({ ok: true });
-        } else {
-          res.status(500).send(error);
-        }
-      }
-    );
-  } catch (error) {
-    console.log(error);
-  }
-};
