@@ -1,20 +1,21 @@
 .lf-super-wrapper{
     display: flex;
     width: 100%;
-    min-width: 800px;
+    min-width: 500px;
     justify-content: center;
     align-items: center;
     padding: 60px 0 0 0;
+    align-self: center;
 
     .lf-main-wrapper{
         background: url("../Login/images/bg-registration-form-2.jpg");
         min-height: 500px;
-        min-width: 800px;
+        min-width: 500px;
 
         .lf-inner{
-            background: url("../Login/images/registration-form-2.jpg");
+            // background: url("../Login/images/registration-form-2.jpg");
             min-height: 500px;
-            min-width: 800px;
+            min-width: 500px;
             background-position: center;
             object-fit: contain;
             background-repeat: no-repeat;
